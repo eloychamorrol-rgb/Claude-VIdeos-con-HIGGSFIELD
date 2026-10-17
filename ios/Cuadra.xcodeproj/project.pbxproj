@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		077297CFFAADA818EFB10EAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24FDD56CCB773C61224AF81F /* Assets.xcassets */; };
+		08328E885B0CC39520A351A8 /* FinanceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F42F603FF15DAEAFC03297 /* FinanceStore.swift */; };
+		20DFDB194626CD9CBEAD8250 /* CuadraCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2A05D12A8DC4949C5160A32A /* CuadraCore */; };
+		3B251C35876BA83263FB5A5B /* AdvisorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A54B0161F9D8A93B9F79235 /* AdvisorView.swift */; };
+		463EAD599A25B950716C175D /* CuadraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62283B9BEA090B59E7A4E591 /* CuadraApp.swift */; };
+		52B8C9FF7C34D3A09EA51F03 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B4BAEFF74AA2C7B74E3A3 /* TransactionsView.swift */; };
+		6C12FD9CBFC96DC033A31C08 /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40BACC8C99BA47303B8F9C4 /* CategoryDetailView.swift */; };
+		716FFA55F3E557CBE75A87E6 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D90DBE011CDB59EA38A642B /* Security.swift */; };
+		78DD7DC0030E4007B39D57D3 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC293A670ED9502800ED2 /* AddTransactionView.swift */; };
+		904909C073E3563A6AE99E62 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E154B45E31FD8DECD33B7200 /* Components.swift */; };
+		929A9F38D549855277728CE2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FB9A96C18B9DC9CCA1448 /* HomeView.swift */; };
+		93340502FBA592AFBCE01745 /* Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57132A3D1BE8DC92A0A2A8B6 /* Inputs.swift */; };
+		B91AF5974ED588CC0E2BC0A2 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242765AB40776DC522881E21 /* Notifications.swift */; };
+		BA3E8386CE7EA36C1DDD3FDD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A53BA27D64D87D89C4FEF /* Theme.swift */; };
+		C240FF19C1CCBEF9E338B2AF /* BankConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBEDE10A071B09CDF61687D /* BankConnectionView.swift */; };
+		D4840177CE3F0220FEF8A7F8 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A2B57E8465C919BEFC8A0 /* AnalysisView.swift */; };
+		E239F63CFB867D6C821188EC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E733C7D767CDBDD6CD026F /* OnboardingView.swift */; };
+		E87DAC8AAA84BF5D71E9B548 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB2280E27065F9EE0269E66 /* SettingsView.swift */; };
+		E9744C67BB8B1D490042F75F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67BD81160790F1E8E131D2 /* Persistence.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		014679155A0E5F7374C7AFA9 /* CuadraCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CuadraCore; path = CuadraCore; sourceTree = SOURCE_ROOT; };
+		07E733C7D767CDBDD6CD026F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		160B4BAEFF74AA2C7B74E3A3 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		242765AB40776DC522881E21 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		24FDD56CCB773C61224AF81F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		348FB9A96C18B9DC9CCA1448 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		57132A3D1BE8DC92A0A2A8B6 /* Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inputs.swift; sourceTree = "<group>"; };
+		62283B9BEA090B59E7A4E591 /* CuadraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuadraApp.swift; sourceTree = "<group>"; };
+		6BFCC293A670ED9502800ED2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		7A54B0161F9D8A93B9F79235 /* AdvisorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvisorView.swift; sourceTree = "<group>"; };
+		8A775FFBB85C8411CD95065F /* Cuadra.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Cuadra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97F42F603FF15DAEAFC03297 /* FinanceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceStore.swift; sourceTree = "<group>"; };
+		9D90DBE011CDB59EA38A642B /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		AD67BD81160790F1E8E131D2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B5A08AD376D82AA1AD527659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CE7A2B57E8465C919BEFC8A0 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
+		CEBEDE10A071B09CDF61687D /* BankConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankConnectionView.swift; sourceTree = "<group>"; };
+		E154B45E31FD8DECD33B7200 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		EB9A53BA27D64D87D89C4FEF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		ECB2280E27065F9EE0269E66 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F40BACC8C99BA47303B8F9C4 /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		710E604183F65069E0D04265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20DFDB194626CD9CBEAD8250 /* CuadraCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17025ECA62F82BEB862B5214 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				07E733C7D767CDBDD6CD026F /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		184177C634972B2E74111BC7 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				97F42F603FF15DAEAFC03297 /* FinanceStore.swift */,
+				242765AB40776DC522881E21 /* Notifications.swift */,
+				AD67BD81160790F1E8E131D2 /* Persistence.swift */,
+				9D90DBE011CDB59EA38A642B /* Security.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		308E3398AA7BAA52689E6BEF /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				E154B45E31FD8DECD33B7200 /* Components.swift */,
+				57132A3D1BE8DC92A0A2A8B6 /* Inputs.swift */,
+				EB9A53BA27D64D87D89C4FEF /* Theme.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		40B5312E7DEDE3524D14BAD7 /* Advisor */ = {
+			isa = PBXGroup;
+			children = (
+				7A54B0161F9D8A93B9F79235 /* AdvisorView.swift */,
+			);
+			path = Advisor;
+			sourceTree = "<group>";
+		};
+		70A0E738D3D952EE488955E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A775FFBB85C8411CD95065F /* Cuadra.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76DBB2794CBB19D3F4CC8949 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				24FDD56CCB773C61224AF81F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		94C9DE0FE65E449831C1CB12 /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				CE7A2B57E8465C919BEFC8A0 /* AnalysisView.swift */,
+				F40BACC8C99BA47303B8F9C4 /* CategoryDetailView.swift */,
+			);
+			path = Analysis;
+			sourceTree = "<group>";
+		};
+		9A747D36A8A9BC3AFAC7CBCF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				62283B9BEA090B59E7A4E591 /* CuadraApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9D76AE161A87A4129816E0F4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				014679155A0E5F7374C7AFA9 /* CuadraCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		AE62E3782608ACC902E54FE9 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				40B5312E7DEDE3524D14BAD7 /* Advisor */,
+				94C9DE0FE65E449831C1CB12 /* Analysis */,
+				AFF07346589553D3DAF6B5E0 /* Home */,
+				17025ECA62F82BEB862B5214 /* Onboarding */,
+				EADCFB7A27830D2C9DE0E9C8 /* Settings */,
+				C0BC5801F5DE48342AE62785 /* Transactions */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		AFF07346589553D3DAF6B5E0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				348FB9A96C18B9DC9CCA1448 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B56AA0B3C7FADB2E20FE39C1 = {
+			isa = PBXGroup;
+			children = (
+				D96179EBF6906B10CA694A52 /* Cuadra */,
+				9D76AE161A87A4129816E0F4 /* Packages */,
+				70A0E738D3D952EE488955E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0BC5801F5DE48342AE62785 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				6BFCC293A670ED9502800ED2 /* AddTransactionView.swift */,
+				160B4BAEFF74AA2C7B74E3A3 /* TransactionsView.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		D96179EBF6906B10CA694A52 /* Cuadra */ = {
+			isa = PBXGroup;
+			children = (
+				B5A08AD376D82AA1AD527659 /* Info.plist */,
+				9A747D36A8A9BC3AFAC7CBCF /* App */,
+				308E3398AA7BAA52689E6BEF /* Design */,
+				AE62E3782608ACC902E54FE9 /* Features */,
+				76DBB2794CBB19D3F4CC8949 /* Resources */,
+				184177C634972B2E74111BC7 /* State */,
+			);
+			path = Cuadra;
+			sourceTree = "<group>";
+		};
+		EADCFB7A27830D2C9DE0E9C8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CEBEDE10A071B09CDF61687D /* BankConnectionView.swift */,
+				ECB2280E27065F9EE0269E66 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9CA4EB7EA4060DCC61ECF08 /* Cuadra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 557E68F10B4D7DA5E4665FFF /* Build configuration list for PBXNativeTarget "Cuadra" */;
+			buildPhases = (
+				BC8142CA3B3958953B6A31D2 /* Sources */,
+				D516EDAEC781D38B456319F6 /* Resources */,
+				710E604183F65069E0D04265 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cuadra;
+			packageProductDependencies = (
+				2A05D12A8DC4949C5160A32A /* CuadraCore */,
+			);
+			productName = Cuadra;
+			productReference = 8A775FFBB85C8411CD95065F /* Cuadra.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		646DEE4BDBD19BE468AAD4D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					D9CA4EB7EA4060DCC61ECF08 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2F3BC1C6AF73A658B0B901BC /* Build configuration list for PBXProject "Cuadra" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = es;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				es,
+			);
+			mainGroup = B56AA0B3C7FADB2E20FE39C1;
+			packageReferences = (
+				A29B300EBB49BC5A877A22B4 /* XCLocalSwiftPackageReference "CuadraCore" */,
+			);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9CA4EB7EA4060DCC61ECF08 /* Cuadra */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D516EDAEC781D38B456319F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				077297CFFAADA818EFB10EAE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC8142CA3B3958953B6A31D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78DD7DC0030E4007B39D57D3 /* AddTransactionView.swift in Sources */,
+				3B251C35876BA83263FB5A5B /* AdvisorView.swift in Sources */,
+				D4840177CE3F0220FEF8A7F8 /* AnalysisView.swift in Sources */,
+				C240FF19C1CCBEF9E338B2AF /* BankConnectionView.swift in Sources */,
+				6C12FD9CBFC96DC033A31C08 /* CategoryDetailView.swift in Sources */,
+				904909C073E3563A6AE99E62 /* Components.swift in Sources */,
+				463EAD599A25B950716C175D /* CuadraApp.swift in Sources */,
+				08328E885B0CC39520A351A8 /* FinanceStore.swift in Sources */,
+				929A9F38D549855277728CE2 /* HomeView.swift in Sources */,
+				93340502FBA592AFBCE01745 /* Inputs.swift in Sources */,
+				B91AF5974ED588CC0E2BC0A2 /* Notifications.swift in Sources */,
+				E239F63CFB867D6C821188EC /* OnboardingView.swift in Sources */,
+				E9744C67BB8B1D490042F75F /* Persistence.swift in Sources */,
+				716FFA55F3E557CBE75A87E6 /* Security.swift in Sources */,
+				E87DAC8AAA84BF5D71E9B548 /* SettingsView.swift in Sources */,
+				BA3E8386CE7EA36C1DDD3FDD /* Theme.swift in Sources */,
+				52B8C9FF7C34D3A09EA51F03 /* TransactionsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0A907AC594C42397A87F40D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Cuadra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cl.cuadra.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9543BDFB8CA31AFCD87EEE4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C1F6F2F77212BB6968910CD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Cuadra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cl.cuadra.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CD9C1FFEE2FF0AA8DFF515F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F3BC1C6AF73A658B0B901BC /* Build configuration list for PBXProject "Cuadra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD9C1FFEE2FF0AA8DFF515F1 /* Debug */,
+				9543BDFB8CA31AFCD87EEE4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		557E68F10B4D7DA5E4665FFF /* Build configuration list for PBXNativeTarget "Cuadra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A907AC594C42397A87F40D7 /* Debug */,
+				C1F6F2F77212BB6968910CD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A29B300EBB49BC5A877A22B4 /* XCLocalSwiftPackageReference "CuadraCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = CuadraCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A05D12A8DC4949C5160A32A /* CuadraCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CuadraCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 646DEE4BDBD19BE468AAD4D2 /* Project object */;
+}
