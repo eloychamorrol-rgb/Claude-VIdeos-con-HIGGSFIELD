@@ -1,0 +1,12 @@
+{
+  "name": "cuadra-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Puente seguro entre la app Cuadra y el agregador bancario (Fintoc).",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  }
+}

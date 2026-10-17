@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Conectar banco</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      font: 15px/1.4 -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: Canvas; color: CanvasText; text-align: center; padding: 24px; box-sizing: border-box;
+    }
+    p { color: GrayText; max-width: 280px; }
+    .spinner {
+      width: 22px; height: 22px; margin: 0 auto 12px; border-radius: 50%;
+      border: 2px solid color-mix(in srgb, CanvasText 15%, transparent); border-top-color: CanvasText;
+      animation: spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="spinner" id="spinner"></div>
+    <p id="status">Abriendo la conexión segura con tu banco…</p>
+  </div>
+  <script>
+    // Envía el resultado a la app (WKWebView). Fuera de la app solo muestra un mensaje.
+    function notify(message) {
+      const handler = window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.cuadra;
+      if (handler) handler.postMessage(message);
+    }
+    function fail(text) {
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('status').textContent = text;
+      notify({ type: 'error', message: text });
+    }
+  </script>
+  <script src="https://js.fintoc.com/v1/" onerror="fail('No se pudo cargar el conector bancario. Revisa tu conexión a internet.')"></script>
+  <script>
+    (function () {
+      if (!window.Fintoc) return;
+      const options = {
+        publicKey: __FINTOC_PUBLIC_KEY__,
+        holderType: 'individual',
+        product: 'movements',
+        country: 'cl',
+        onSuccess: function (link) {
+          const exchangeToken = link && (link.exchangeToken || link.exchange_token);
+          if (!exchangeToken) return fail('El conector no entregó la conexión. Intenta nuevamente.');
+          document.getElementById('status').textContent = 'Conectado. Volviendo a la app…';
+          notify({ type: 'success', exchangeToken: exchangeToken });
+        },
+        onExit: function () { notify({ type: 'exit' }); },
+      };
+      const webhookUrl = __WEBHOOK_URL__;
+      if (webhookUrl) options.webhookUrl = webhookUrl;
+      try {
+        window.Fintoc.create(options).open();
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('status').textContent = 'Sigue los pasos en la ventana del banco.';
+      } catch (error) {
+        fail('No se pudo abrir el conector bancario.');
+      }
+    })();
+  </script>
+</body>
+</html>
