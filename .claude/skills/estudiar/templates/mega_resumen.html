@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mega resumen RAMO</title>
+<!-- Plantilla del mega resumen. Reemplazar todo lo que está en MAYÚSCULAS / entre [corchetes]. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#f6f7fb; --card:#ffffff; --ink:#1b1f2a; --muted:#5b6475; --line:#e3e6ee;
+  --accent:#2f6bff; --accent-soft:#e8efff; --err:#d64545; --err-soft:#fdecec;
+  --ok:#1f9d6b; --ok-soft:#e6f6ef; --tip:#b7791f; --tip-soft:#fdf4e3;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10131a; --card:#181c25; --ink:#e8ebf2; --muted:#9aa3b5; --line:#2a303d;
+    --accent:#6f9bff; --accent-soft:#1d2840; --err:#ff7a7a; --err-soft:#3a1f22;
+    --ok:#4fd1a0; --ok-soft:#173329; --tip:#f0b35a; --tip-soft:#3a2e17;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10131a; --card:#181c25; --ink:#e8ebf2; --muted:#9aa3b5; --line:#2a303d;
+  --accent:#6f9bff; --accent-soft:#1d2840; --err:#ff7a7a; --err-soft:#3a1f22;
+  --ok:#4fd1a0; --ok-soft:#173329; --tip:#f0b35a; --tip-soft:#3a2e17;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:24px 16px 64px}
+header{margin-bottom:24px}
+header h1{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 4px}
+header p{margin:0;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px;font-size:.85rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+section h2{margin:0 0 12px;font-size:1.25rem}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{border:1px solid var(--line);border-radius:10px;padding:12px}
+.card h3{margin:0 0 6px;font-size:1rem}
+.formula{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:10px 0;overflow-x:auto}
+.formula small{display:block;color:var(--muted)}
+.errors{border-color:var(--err)}
+.errors h2{color:var(--err)}
+.err{background:var(--err-soft);border-radius:10px;padding:12px;margin:8px 0}
+.err b{color:var(--err)}
+.err .fix{color:var(--ok)}
+.tips{border-color:var(--tip)}
+.tips li{margin:6px 0}
+.tips li::marker{content:"⚡ "}
+.check li{list-style:none;margin:6px 0}
+.check li::before{content:"☐ ";color:var(--ok)}
+.chart{position:relative;height:280px}
+ol.steps li{margin:4px 0}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>[RAMO] — [EVALUACIÓN]</h1>
+    <p>[FECHA] · Mega resumen</p>
+    <div class="chips"><span class="chip">[Tema 1]</span><span class="chip">[Tema 2]</span></div>
+  </header>
+
+  <section>
+    <h2>🗺️ Mapa de la prueba</h2>
+    <div class="grid">
+      <div class="card"><h3>1. [Tema]</h3><p>[Qué es y con qué se conecta]</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🧠 Conceptos clave</h2>
+    <div class="grid">
+      <div class="card"><h3>[Concepto]</h3><p>[Definición corta]</p><p><em>Intuición:</em> [una línea]</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>📐 Fórmulas</h2>
+    <div class="formula">
+      \[ \varepsilon_{p} = \frac{\partial Q}{\partial P}\cdot\frac{P}{Q} \]
+      <small>[Qué es cada variable · cuándo se usa]</small>
+    </div>
+  </section>
+
+  <section>
+    <h2>📊 Gráficos</h2>
+    <div class="chart"><canvas id="g1"></canvas></div>
+    <p>[Cómo leer el gráfico en una línea]</p>
+  </section>
+
+  <section>
+    <h2>✏️ Ejemplos tipo</h2>
+    <div class="card"><h3>[Enunciado corto]</h3>
+      <ol class="steps"><li>[Paso clave]</li><li>[Paso clave]</li></ol>
+    </div>
+  </section>
+
+  <section class="errors">
+    <h2>❌ Mis errores de esta sesión</h2>
+    <div class="err">
+      <p><b>[Tema]:</b> respondí [lo que respondí].</p>
+      <p class="fix">✔ Lo correcto: [respuesta correcta]</p>
+      <p>Para no repetirlo: [regla o truco]</p>
+    </div>
+  </section>
+
+  <section class="tips">
+    <h2>💡 Tips para la prueba</h2>
+    <ul><li>[Trampa típica / qué revisar]</li></ul>
+  </section>
+
+  <section>
+    <h2>✅ Checklist final</h2>
+    <ul class="check"><li>[Sé hacer X sin mirar]</li></ul>
+  </section>
+</main>
+<script>
+// Ejemplo: oferta y demanda lineales. Reemplazar o borrar según el ramo.
+(function(){
+  if(!window.Chart) return;
+  const css=getComputedStyle(document.documentElement);
+  const c=n=>css.getPropertyValue(n).trim();
+  const xs=[...Array(11).keys()];
+  new Chart(document.getElementById('g1'),{
+    type:'line',
+    data:{labels:xs,datasets:[
+      {label:'Demanda  P = 10 − Q',data:xs.map(q=>10-q),borderColor:c('--accent'),pointRadius:0},
+      {label:'Oferta  P = 2 + Q',data:xs.map(q=>2+q),borderColor:c('--ok'),pointRadius:0}
+    ]},
+    options:{maintainAspectRatio:false,plugins:{legend:{labels:{color:c('--ink')}}},
+      scales:{x:{title:{display:true,text:'Q',color:c('--muted')},ticks:{color:c('--muted')},grid:{color:c('--line')}},
+              y:{title:{display:true,text:'P',color:c('--muted')},ticks:{color:c('--muted')},grid:{color:c('--line')}}}}
+  });
+})();
+</script>
+</body>
+</html>
