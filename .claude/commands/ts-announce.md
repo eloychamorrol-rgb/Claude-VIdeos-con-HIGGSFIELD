@@ -1,0 +1,1 @@
+../teaching-skills/commands/ts-announce.md
