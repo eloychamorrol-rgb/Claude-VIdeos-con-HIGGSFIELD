@@ -119,11 +119,11 @@ const segAt = (f: number) => {
 const Speaker: React.FC = () => {
   const f = useCurrentFrame();
   const i = segAt(f);
-  const local = f - S(i);
-  const scale = (i % 2 ? 1.4 : 1.3) + local * 0.0005;
+  // Native size (no upscaling); a subtle 5% punch-in on alternate takes hides jump cuts.
+  const scale = i % 2 ? 1.05 : 1.0;
   return (
     <AbsoluteFill style={{ backgroundColor: "#111" }}>
-      <AbsoluteFill style={{ scale: String(scale), transformOrigin: "540px 640px", translate: "0px 600px" }}>
+      <AbsoluteFill style={{ scale: String(scale), transformOrigin: "540px 640px", translate: "0px 560px" }}>
         <Video src={staticFile("cut.mp4")} style={{ width: 1080, height: 1920 }} />
       </AbsoluteFill>
     </AbsoluteFill>
