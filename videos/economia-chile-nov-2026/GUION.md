@@ -28,7 +28,7 @@
 > Los marcadores entre [corchetes] son para la edición, no se leen. Las barras ( / ) marcan dónde hacer una pausa corta o un corte.
 
 **[0–3 s · GANCHO]**
-Chile tiene hoy el cobre más caro de su historia… / y aun así más de un millón de personas no tiene trabajo. / ¿Cómo se explica eso?
+El cobre, lo que más vende Chile, está carísimo… / y aun así más de un millón de personas no tiene trabajo. / ¿Cómo se explica eso?
 `[TEXTO: "1.000.000 sin trabajo 😳"]`
 
 **[3–12 s · DESEMPLEO]**
