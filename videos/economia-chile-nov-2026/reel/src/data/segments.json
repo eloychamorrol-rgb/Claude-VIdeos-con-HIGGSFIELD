@@ -1,0 +1,344 @@
+[
+ {
+  "src_from": 86,
+  "src_to": 177,
+  "from": 0,
+  "dur": 91,
+  "text": "El cobre, lo que más vende Chile, está carísimo…",
+  "speech_a": 0.10000000000000009,
+  "speech_b": 2.8729999999999998
+ },
+ {
+  "src_from": 323,
+  "src_to": 410,
+  "from": 91,
+  "dur": 87,
+  "text": "y aun así más de un millón de personas no tiene trabajo.",
+  "speech_a": 3.133333333333333,
+  "speech_b": 5.772333333333332
+ },
+ {
+  "src_from": 468,
+  "src_to": 504,
+  "from": 178,
+  "dur": 36,
+  "text": "¿Cómo se explica eso?",
+  "speech_a": 6.033333333333333,
+  "speech_b": 6.993333333333332
+ },
+ {
+  "src_from": 637,
+  "src_to": 715,
+  "from": 214,
+  "dur": 78,
+  "text": "El desempleo llegó a 9,8%.",
+  "speech_a": 7.233333333333335,
+  "speech_b": 9.578333333333333
+ },
+ {
+  "src_from": 770,
+  "src_to": 844,
+  "from": 292,
+  "dur": 74,
+  "text": "Son más de un millón de chilenos buscando pega,",
+  "speech_a": 9.833333333333334,
+  "speech_b": 12.058333333333335
+ },
+ {
+  "src_from": 920,
+  "src_to": 1024,
+  "from": 366,
+  "dur": 104,
+  "text": "casi como si Puente Alto y Maipú juntos estuvieran cesantes.",
+  "speech_a": 12.3,
+  "speech_b": 15.506999999999998
+ },
+ {
+  "src_from": 1086,
+  "src_to": 1153,
+  "from": 470,
+  "dur": 67,
+  "text": "Es la cifra más alta desde 2021.",
+  "speech_a": 15.766666666666667,
+  "speech_b": 17.715666666666664
+ },
+ {
+  "src_from": 1252,
+  "src_to": 1308,
+  "from": 537,
+  "dur": 56,
+  "text": "Y mientras tanto, todo sube.",
+  "speech_a": 18.0,
+  "speech_b": 19.597
+ },
+ {
+  "src_from": 1389,
+  "src_to": 1454,
+  "from": 593,
+  "dur": 65,
+  "text": "La inflación está en 4,5%.",
+  "speech_a": 19.866666666666667,
+  "speech_b": 21.772666666666666
+ },
+ {
+  "src_from": 1509,
+  "src_to": 1575,
+  "from": 658,
+  "dur": 66,
+  "text": "O sea, si tu almuerzo costaba 5 mil,",
+  "speech_a": 22.033333333333335,
+  "speech_b": 23.97733333333333
+ },
+ {
+  "src_from": 1578,
+  "src_to": 1663,
+  "from": 724,
+  "dur": 85,
+  "text": "hoy cuesta unos 5.225 pesos.",
+  "speech_a": 24.233333333333334,
+  "speech_b": 26.80133333333334
+ },
+ {
+  "src_from": 1811,
+  "src_to": 1880,
+  "from": 809,
+  "dur": 69,
+  "text": "Lo que más subió fue la bencina y la comida.",
+  "speech_a": 27.066666666666666,
+  "speech_b": 29.111666666666668
+ },
+ {
+  "src_from": 1960,
+  "src_to": 1987,
+  "from": 878,
+  "dur": 27,
+  "text": "¿Y la economía?",
+  "speech_a": 29.36666666666666,
+  "speech_b": 29.974666666666664
+ },
+ {
+  "src_from": 2032,
+  "src_to": 2092,
+  "from": 905,
+  "dur": 60,
+  "text": "Creció un 0,2%.",
+  "speech_a": 30.266666666666662,
+  "speech_b": 32.013666666666666
+ },
+ {
+  "src_from": 2127,
+  "src_to": 2163,
+  "from": 965,
+  "dur": 36,
+  "text": "Prácticamente nada.",
+  "speech_a": 32.26666666666666,
+  "speech_b": 33.20866666666665
+ },
+ {
+  "src_from": 2213,
+  "src_to": 2238,
+  "from": 1001,
+  "dur": 25,
+  "text": "¿El problema?",
+  "speech_a": 33.46666666666666,
+  "speech_b": 34.02866666666667
+ },
+ {
+  "src_from": 2296,
+  "src_to": 2335,
+  "from": 1026,
+  "dur": 39,
+  "text": "El cobre está carísimo,",
+  "speech_a": 34.3,
+  "speech_b": 35.340999999999994
+ },
+ {
+  "src_from": 2387,
+  "src_to": 2446,
+  "from": 1065,
+  "dur": 59,
+  "text": "pero estamos sacando 12% menos.",
+  "speech_a": 35.599999999999994,
+  "speech_b": 37.30899999999998
+ },
+ {
+  "src_from": 2669,
+  "src_to": 2741,
+  "from": 1124,
+  "dur": 72,
+  "text": "Es como si tu producto estuviera en su mejor precio",
+  "speech_a": 37.56666666666666,
+  "speech_b": 39.72466666666665
+ },
+ {
+  "src_from": 2784,
+  "src_to": 2833,
+  "from": 1196,
+  "dur": 49,
+  "text": "y tu fábrica se echara a perder.",
+  "speech_a": 39.96666666666666,
+  "speech_b": 41.33266666666666
+ },
+ {
+  "src_from": 2933,
+  "src_to": 3004,
+  "from": 1245,
+  "dur": 71,
+  "text": "Es por eso que el Banco Central está en un dilema.",
+  "speech_a": 41.599999999999994,
+  "speech_b": 43.699
+ },
+ {
+  "src_from": 3082,
+  "src_to": 3151,
+  "from": 1316,
+  "dur": 69,
+  "text": "Si bajas las tasas, los precios pueden subir más.",
+  "speech_a": 43.96666666666666,
+  "speech_b": 46.03766666666666
+ },
+ {
+  "src_from": 3345,
+  "src_to": 3416,
+  "from": 1385,
+  "dur": 71,
+  "text": "Y si no la bajas, los créditos siguen caros.",
+  "speech_a": 46.26666666666666,
+  "speech_b": 48.36466666666666
+ },
+ {
+  "src_from": 3480,
+  "src_to": 3553,
+  "from": 1456,
+  "dur": 73,
+  "text": "Por ahora la mantiene en 4,5%",
+  "speech_a": 48.633333333333326,
+  "speech_b": 50.81833333333333
+ },
+ {
+  "src_from": 3596,
+  "src_to": 3636,
+  "from": 1529,
+  "dur": 40,
+  "text": "y hasta pensó en subirla.",
+  "speech_a": 51.06666666666666,
+  "speech_b": 52.164666666666676
+ },
+ {
+  "src_from": 3725,
+  "src_to": 3747,
+  "from": 1569,
+  "dur": 22,
+  "text": "¿Y el dólar?",
+  "speech_a": 52.39999999999999,
+  "speech_b": 52.882999999999996
+ },
+ {
+  "src_from": 3767,
+  "src_to": 3799,
+  "from": 1591,
+  "dur": 32,
+  "text": "Casi en mil pesos.",
+  "speech_a": 53.133333333333326,
+  "speech_b": 53.93633333333332
+ },
+ {
+  "src_from": 3922,
+  "src_to": 3959,
+  "from": 1623,
+  "dur": 37,
+  "text": "Todo lo que viene de afuera,",
+  "speech_a": 54.199999999999996,
+  "speech_b": 55.16800000000001
+ },
+ {
+  "src_from": 3981,
+  "src_to": 4063,
+  "from": 1660,
+  "dur": 82,
+  "text": "tu celular, tu auto, la bencina,",
+  "speech_a": 55.43333333333333,
+  "speech_b": 57.894333333333314
+ },
+ {
+  "src_from": 4104,
+  "src_to": 4142,
+  "from": 1742,
+  "dur": 38,
+  "text": "sale más caro.",
+  "speech_a": 58.166666666666664,
+  "speech_b": 59.158666666666655
+ },
+ {
+  "src_from": 4225,
+  "src_to": 4284,
+  "from": 1780,
+  "dur": 59,
+  "text": "Pero ¿hay luz al final del túnel?",
+  "speech_a": 59.43333333333333,
+  "speech_b": 61.13433333333332
+ },
+ {
+  "src_from": 4356,
+  "src_to": 4459,
+  "from": 1839,
+  "dur": 103,
+  "text": "Se aprobó la megarreforma que baja los impuestos a las empresas",
+  "speech_a": 61.39999999999999,
+  "speech_b": 64.55
+ },
+ {
+  "src_from": 4518,
+  "src_to": 4579,
+  "from": 1942,
+  "dur": 61,
+  "text": "para que inviertan y contraten.",
+  "speech_a": 64.83333333333333,
+  "speech_b": 66.62633333333333
+ },
+ {
+  "src_from": 4642,
+  "src_to": 4774,
+  "from": 2003,
+  "dur": 132,
+  "text": "El Banco Central proyecta que el próximo año creceríamos entre un 2 y 3%,",
+  "speech_a": 67.11366666666667,
+  "speech_b": 70.99766666666666
+ },
+ {
+  "src_from": 4821,
+  "src_to": 4874,
+  "from": 2135,
+  "dur": 53,
+  "text": "pero eso todavía hay que verlo.",
+  "speech_a": 71.26666666666667,
+  "speech_b": 72.76766666666667
+ },
+ {
+  "src_from": 5420,
+  "src_to": 5553,
+  "from": 2188,
+  "dur": 133,
+  "text": "En resumen: tenemos precios arriba, empleo abajo y una economía en pausa.",
+  "speech_a": 73.03333333333333,
+  "speech_b": 77.17933333333335
+ },
+ {
+  "src_from": 5617,
+  "src_to": 5669,
+  "from": 2321,
+  "dur": 52,
+  "text": "¿Y tú ya lo estás sintiendo en tu bolsillo?",
+  "speech_a": 77.46666666666665,
+  "speech_b": 78.96966666666664
+ },
+ {
+  "src_from": 6008,
+  "src_to": 6096,
+  "from": 2373,
+  "dur": 88,
+  "text": "Cuéntame y sígueme para entender la economía sin enredos.",
+  "speech_a": 79.19999999999999,
+  "speech_b": 81.88199999999998
+ }
+]
