@@ -28,7 +28,7 @@ import { clamp, useF } from "./ui";
 
 export const REC_FPS = 60;
 
-type Piece = { src_from: number; src_to: number; from: number; dur: number; group: number };
+type Piece = { src_from: number; src_to: number; from: number; dur: number; group: number; cut_from: number };
 type Group = { from: number; dur: number; text: string };
 const PIECES = (plan as { pieces: Piece[]; groups: Group[] }).pieces;
 const GROUPS = (plan as { pieces: Piece[]; groups: Group[] }).groups;
@@ -96,7 +96,7 @@ const SCENES: Scene[] = [
     name: "Ecuación",
     a: S(21),
     b: E(21),
-    el: (d) => <SEquation dur={d} b1={B(W(21, /estancamiento/i), S(21))} b2={B(W(21, /inflaci/i), S(21))} b3={B(W(21, /inflaci/i), S(21)) + 16} />,
+    el: (d) => <SEquation dur={d} b1={B(W(21, /estancamiento/i), S(21))} b2={B(W(21, /inflaci/i), S(21))} b3={B(W(21, /inflaci/i), S(21)) + 5} />,
   },
   { name: "No avanza / suben", a: S(22), b: E(22), el: (d) => <SNoAdvance dur={d} b2={B(W(22, /precios/i), S(22))} /> },
   { name: "Auto en pana", a: S(23), b: E(23), el: (d) => <SCarPump dur={d} b2={B(W(23, /bencina/i), S(23))} /> },
@@ -132,6 +132,14 @@ const pieceAt = (f: number) => {
   return i;
 };
 
+/** Tramos continuos del archivo de corte (si se saltó algo después de cortar, aquí aparece como un tramo nuevo). */
+const SPANS = PIECES.reduce<{ from: number; dur: number; cut_from: number }[]>((acc, p) => {
+  const last = acc[acc.length - 1];
+  if (last && last.cut_from + last.dur === p.cut_from && last.from + last.dur === p.from) last.dur += p.dur;
+  else acc.push({ from: p.from, dur: p.dur, cut_from: p.cut_from });
+  return acc;
+}, []);
+
 const Speaker: React.FC = () => {
   const f = useCurrentFrame();
   const i = pieceAt(f);
@@ -139,7 +147,11 @@ const Speaker: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#111" }}>
       <AbsoluteFill style={{ scale: String(scale), transformOrigin: "540px 1090px", translate: `0px ${SPEAKER_OFFSET}px` }}>
-        <Video src={staticFile("recesion/cut.mp4")} style={{ width: 1080, height: 1920 }} />
+        {SPANS.map((sp) => (
+          <Sequence key={sp.from} from={sp.from} durationInFrames={sp.dur} name={`Video ${sp.from}`}>
+            <Video src={staticFile("recesion/cut.mp4")} trimBefore={sp.cut_from} style={{ width: 1080, height: 1920 }} />
+          </Sequence>
+        ))}
       </AbsoluteFill>
     </AbsoluteFill>
   );

@@ -270,12 +270,14 @@ export const SEquation: React.FC<P & { b1: number; b2: number; b3: number }> = (
   return (
     <AbsoluteFill>
       <SeriesTag />
-      <div style={{ position: "absolute", top: 190, left: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
-        {piece("ESTANCAMIENTO", b1, C.paper, C.ink)}
+      <div style={{ position: "absolute", top: 230, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", gap: 18 }}>
+        {piece("ESTANCAMIENTO", b1, C.paper, C.ink, 54)}
         {op("+", b2)}
-        {piece("INFLACIÓN", b2, C.red, C.paper)}
+        {piece("INFLACIÓN", b2, C.red, C.paper, 54)}
+      </div>
+      <div style={{ position: "absolute", top: 420, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", gap: 22 }}>
         {op("=", b3)}
-        {piece("ESTANFLACIÓN", b3, C.blue, C.paper, 72)}
+        {piece("ESTANFLACIÓN", b3, C.blue, C.paper, 84)}
       </div>
     </AbsoluteFill>
   );
@@ -369,7 +371,16 @@ export const SIngredients: React.FC<P & { beats: number[]; allAt: number }> = ({
   return (
     <AbsoluteFill>
       <SeriesTag />
-      <Card title="Chile hoy" accent={C.blue} source="Banco Central · INE">
+      <Card
+        title="Chile hoy"
+        accent={C.blue}
+        source="Banco Central · INE"
+        right={
+          <div style={{ opacity: f >= allAt ? 1 : 0, scale: String(pop(f, allAt, 12)), rotate: "4deg" }}>
+            <Pill text="3 DE 3 ✔" bg={C.yellow} size={30} />
+          </div>
+        }
+      >
         <Row at={beats[0]} top={110} icon="pause" color={C.yellow} label="Crecimiento" value={<span style={{ display: "flex", gap: 14, alignItems: "center" }}>≈0% {check(beats[0])}</span>} />
         <Row
           at={beats[1]}
@@ -389,9 +400,6 @@ export const SIngredients: React.FC<P & { beats: number[]; allAt: number }> = ({
           valueColor={C.red}
           value={<span style={{ display: "flex", gap: 14, alignItems: "center" }}>9,8% {check(beats[2])}</span>}
         />
-        <div style={{ position: "absolute", top: 120, right: 40, opacity: f >= allAt ? 1 : 0 }}>
-          <Stamp text="3 DE 3" at={allAt} top={0} bg={C.yellow} color={C.ink} rotate={8} />
-        </div>
       </Card>
     </AbsoluteFill>
   );
