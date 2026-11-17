@@ -1,6 +1,13 @@
 import React from "react";
-import { Easing, interpolate, useCurrentFrame } from "remotion";
+import { Easing, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { C, F, STYLE } from "./theme";
+
+/** Cuadro "a 30 fps": las animaciones duran lo mismo a 30 o a 60 fps. */
+export const useF = (): number => {
+  const f = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  return (f * 30) / fps;
+};
 
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const easeOut = Easing.bezier(0.16, 1, 0.3, 1);
@@ -45,7 +52,7 @@ export const Card: React.FC<{
   children: React.ReactNode;
   at?: number;
 }> = ({ title, right, source, accent = C.blue, top = 200, height = 490, children, at = 0 }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   const p = pop(f, at, 14);
   return (
     <div
@@ -91,7 +98,7 @@ export const Title: React.FC<{ text: string; top: number; at?: number; size?: nu
   size = 116,
   color = C.ink,
 }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   const p = pop(f, at, 12);
   return (
     <div
@@ -126,7 +133,7 @@ export const Block: React.FC<{ text: string; top: number; at?: number; size?: nu
   color = C.paper,
   rotate = -2,
 }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   const p = pop(f, at, 12);
   return (
     <div style={{ position: "absolute", top, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
@@ -174,7 +181,7 @@ export const Pill: React.FC<{ text: string; bg?: string; color?: string; size?: 
 
 /** Subrayado a mano que se dibuja solo (reemplaza el círculo rojo). */
 export const Scribble: React.FC<{ x: number; y: number; w: number; at?: number; color?: string }> = ({ x, y, w, at = 0, color = C.red }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   const p = prog(f, at, at + 12);
   const d = `M ${x} ${y} Q ${x + w * 0.25} ${y - 10} ${x + w * 0.5} ${y + 2} T ${x + w} ${y - 4}`;
   const len = w * 1.2;
@@ -194,7 +201,7 @@ export const Stamp: React.FC<{ text: string; at: number; top: number; bg?: strin
   color = C.paper,
   rotate = -6,
 }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   const s = interpolate(f, [at, at + 6], [1.7, 1], clamp);
   const o = interpolate(f, [at, at + 3], [0, 1], clamp);
   return (

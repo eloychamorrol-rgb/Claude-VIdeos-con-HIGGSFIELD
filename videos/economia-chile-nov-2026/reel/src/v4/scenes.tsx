@@ -1,8 +1,8 @@
 import React from "react";
-import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
+import { AbsoluteFill, interpolate } from "remotion";
 import { Icon } from "./icons";
 import { C, F, STYLE } from "./theme";
-import { Block, Card, Pill, Scribble, SeriesTag, Title, clamp, count, fmt, pop, prog } from "./ui";
+import { Block, Card, Pill, Scribble, SeriesTag, Title, clamp, count, fmt, pop, prog, useF } from "./ui";
 
 type P = { dur: number };
 
@@ -11,7 +11,7 @@ type P = { dur: number };
 /* ------------------------------------------------------------------ */
 
 const Santiago: React.FC = () => {
-  const f = useCurrentFrame();
+  const f = useF();
   const sw = STYLE.stroke;
   const towers = [
     { x: 40, w: 90, h: 120 },
@@ -75,7 +75,7 @@ const Mini: React.FC<{ left?: number; right?: number; top: number; at: number; l
   color,
   icon,
 }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   const p = pop(f, at, 12);
   return (
     <div
@@ -107,7 +107,7 @@ const Mini: React.FC<{ left?: number; right?: number; top: number; at: number; l
 };
 
 export const SHook: React.FC<P & { secondAt: number }> = ({ secondAt }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   return (
     <AbsoluteFill style={{ background: "linear-gradient(180deg,#FCE9CF 0%,#F4F0E8 60%)" }}>
       <Santiago />
@@ -134,7 +134,7 @@ export const SQuestion: React.FC<P & { a: string; b: string; icon?: Parameters<t
   bg = C.blue,
   color = C.paper,
 }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   return (
     <AbsoluteFill>
       <SeriesTag />
@@ -150,7 +150,7 @@ export const SQuestion: React.FC<P & { a: string; b: string; icon?: Parameters<t
 };
 
 export const SFullQuestion: React.FC<P & { a: string; b: string }> = ({ a, b }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   const people = [C.blue, C.red, C.yellow, C.green, C.copper];
   return (
     <AbsoluteFill>
@@ -195,7 +195,7 @@ export const SFullQuestion: React.FC<P & { a: string; b: string }> = ({ a, b }) 
 };
 
 export const SUnemployment: React.FC<P> = () => {
-  const f = useCurrentFrame();
+  const f = useF();
   const v = count(f, 14, 40, 9.8);
   const p1 = prog(f, 6, 24);
   const p2 = prog(f, 14, 40);
@@ -227,7 +227,7 @@ export const SUnemployment: React.FC<P> = () => {
 };
 
 export const SDollar: React.FC<P & { icons: number[] }> = ({ icons }) => {
-  const f = useCurrentFrame();
+  const f = useF();
   const v = count(f, 4, 30, 984, 930);
   const items: { n: Parameters<typeof Icon>[0]["name"]; t: string; c: string }[] = [
     { n: "phone", t: "CELULAR", c: C.blue },

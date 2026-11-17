@@ -22,7 +22,11 @@ export type IconName =
   | "pause"
   | "doc"
   | "bank"
-  | "plate";
+  | "plate"
+  | "store"
+  | "barrel"
+  | "dollar"
+  | "check";
 
 const S = { stroke: C.ink, strokeWidth: 5, strokeLinejoin: "round" as const, strokeLinecap: "round" as const };
 
@@ -141,6 +145,40 @@ const paths: Record<IconName, (color: string) => React.ReactNode> = {
         <rect key={x} x={x} y={38} width={10} height={40} fill={C.paper} {...S} strokeWidth={3} />
       ))}
       <rect x={6} y={80} width={88} height={12} fill={c} {...S} />
+    </>
+  ),
+  store: (c) => (
+    <>
+      <rect x={12} y={40} width={76} height={50} fill={C.paper} {...S} />
+      <path d="M6 40 L14 14 L86 14 L94 40 Z" fill={c} {...S} />
+      {[22, 40, 58, 76].map((x) => (
+        <path key={x} d={`M${x - 9} 40 Q${x} 52 ${x + 9} 40`} fill={c} {...S} strokeWidth={3} />
+      ))}
+      <rect x={22} y={58} width={22} height={32} fill={C.yellow} {...S} strokeWidth={3} />
+      <rect x={54} y={56} width={24} height={18} fill={C.faint} {...S} strokeWidth={3} />
+    </>
+  ),
+  barrel: (c) => (
+    <>
+      <path d="M22 12 L78 12 Q86 50 78 88 L22 88 Q14 50 22 12 Z" fill={c} {...S} />
+      <line x1={17} y1={34} x2={83} y2={34} {...S} />
+      <line x1={17} y1={66} x2={83} y2={66} {...S} />
+      <path d="M50 42 Q58 52 50 60 Q42 52 50 42 Z" fill={C.ink} />
+    </>
+  ),
+  dollar: (c) => (
+    <>
+      <rect x={6} y={24} width={88} height={52} rx={8} fill={c} {...S} />
+      <circle cx={50} cy={50} r={15} fill={C.paper} {...S} strokeWidth={3} />
+      <text x={50} y={58} textAnchor="middle" fontSize={22} fontWeight={800} fill={C.ink} fontFamily="'Bricolage Grotesque', sans-serif">
+        $
+      </text>
+    </>
+  ),
+  check: (c) => (
+    <>
+      <circle cx={50} cy={50} r={40} fill={c} {...S} />
+      <path d="M30 52 L44 66 L72 36" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" strokeLinejoin="round" />
     </>
   ),
   plate: (c) => (
