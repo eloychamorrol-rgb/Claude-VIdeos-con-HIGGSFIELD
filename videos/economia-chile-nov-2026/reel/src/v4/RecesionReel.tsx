@@ -5,26 +5,17 @@ import plan from "../data/recesion_plan.json";
 import wordsJson from "../data/recesion_words.json";
 import { Captions, Word } from "./Captions";
 import {
-  SBarsRecession,
-  SCarPump,
   SConsequences,
   SCta,
-  SDilemma,
   SEquation,
-  SHistory,
-  SHookRecession,
-  SIngredients,
-  SNoAdvance,
-  SPib,
-  SQuote,
   SRisk,
   SStore,
-  SVerdict,
   SWorse,
 } from "./recesion";
 import { SQuestion } from "./scenes";
+import { SAvatarQuote, SCarRoad, SMagnifier, SNewsHook, SOil70, SPot, SRecessionChart, SSeesaw, SVerdictAvatars } from "./recesion2";
 import { C, STYLE } from "./theme";
-import { clamp, useF } from "./ui";
+import { SeriesCtx, clamp, useF } from "./ui";
 
 export const REC_FPS = 60;
 
@@ -49,16 +40,20 @@ const W = (g: number, re: RegExp) => {
 const B = (abs: number, sceneStart: number) => (abs - sceneStart) / 2;
 
 const PANEL = STYLE.layout.panel;
-const SPEAKER_OFFSET = 230; // en este video estás más abajo en el encuadre
+// En la grabación tu cara está al 43,9% del ancho (x≈474) y a y≈933. Se centra con un acercamiento
+// mínimo de 14% sobre tu cara: el video es 4K, así que no se pierde nitidez en el reel (1080p).
+const FACE = { x: 474, y: 933 };
+const BASE_ZOOM = 1.14;
+const SPEAKER_OFFSET = 272;
 
 type Scene = { name: string; a: number; b: number; full?: boolean; el: (d: number) => React.ReactNode };
 
 const SCENES: Scene[] = [
-  { name: "Gancho: recesión técnica", a: 0, b: E(0), el: (d) => <SHookRecession dur={d} /> },
+  { name: "Gancho: noticia", a: 0, b: E(0), el: (d) => <SNewsHook dur={d} /> },
   { name: "Algo peor: estanflación", a: S(1), b: E(3), full: true, el: (d) => <SWorse dur={d} revealAt={B(S(2), S(1)) + 4} /> },
   { name: "¿Qué es una recesión?", a: S(4), b: E(4), el: (d) => <SQuestion dur={d} a="¿QUÉ ES UNA" b="RECESIÓN?" bg={C.red} /> },
   { name: "El almacén", a: S(5), b: E(6), el: (d) => <SStore dur={d} goodsAt={B(S(6), S(5))} /> },
-  { name: "Dos trimestres", a: S(7), b: E(8), el: (d) => <SBarsRecession dur={d} stampAt={B(W(8, /recesi/i), S(7))} /> },
+  { name: "Gráfico recesión técnica", a: S(7), b: E(8), full: true, el: (d) => <SRecessionChart dur={d} zoneAt={B(S(8), S(7)) + 4} /> },
   {
     name: "Consecuencias",
     a: S(9),
@@ -67,23 +62,24 @@ const SCENES: Scene[] = [
   },
   { name: "¿Y Chile?", a: S(11), b: E(11), el: (d) => <SQuestion dur={d} a="¿Y" b="CHILE?" bg={C.blue} /> },
   {
-    name: "PIB Chile",
+    name: "PIB con lupa",
     a: S(12),
     b: E(16),
-    el: (d) => <SPib dur={d} t2At={B(S(13), S(12))} decAt={B(W(14, /decimales/i), S(12))} twoAt={B(S(16), S(12))} />,
+    el: (d) => <SMagnifier dur={d} t2At={B(S(13), S(12))} lensAt={B(W(14, /decimales/i), S(12))} twoAt={B(S(16), S(12))} />,
   },
   {
-    name: "Cita ministro",
+    name: "Cita ministro (avatar)",
     a: S(17),
     b: E(19),
     el: (d) => (
-      <SQuote
+      <SAvatarQuote
         dur={d}
+        look="quiroz"
         quote="Se le puede llamar técnicamente una recesión"
         who="Jorge Quiroz"
         role="Ministro de Hacienda"
-        source="entrevista con Bloomberg, 11 nov 2026"
-        accent={C.red}
+        source="Bloomberg, 11 nov 2026"
+        talkUntil={B(S(19), S(17)) + 60}
         chips={[
           { at: B(W(19, /cobre/i), S(17)), text: "por la caída del cobre", bg: C.yellow },
           { at: B(W(19, /corta/i), S(17)), text: "“será corta”", bg: C.paper },
@@ -98,20 +94,20 @@ const SCENES: Scene[] = [
     b: E(21),
     el: (d) => <SEquation dur={d} b1={B(W(21, /estancamiento/i), S(21))} b2={B(W(21, /inflaci/i), S(21))} b3={B(W(21, /inflaci/i), S(21)) + 5} />,
   },
-  { name: "No avanza / suben", a: S(22), b: E(22), el: (d) => <SNoAdvance dur={d} b2={B(W(22, /precios/i), S(22))} /> },
-  { name: "Auto en pana", a: S(23), b: E(23), el: (d) => <SCarPump dur={d} b2={B(W(23, /bencina/i), S(23))} /> },
-  { name: "Años 70", a: S(24), b: E(26), el: (d) => <SHistory dur={d} b2={B(W(25, /cuadrupl/i), S(24))} b3={B(S(26), S(24))} /> },
+  { name: "Auto en pana (pantalla completa)", a: S(22), b: E(23), full: true, el: (d) => <SCarRoad dur={d} b2={B(W(22, /precios/i), S(22))} /> },
+  { name: "Años 70", a: S(24), b: E(26), el: (d) => <SOil70 dur={d} b2={B(W(25, /cuadrupl/i), S(24))} b3={B(S(26), S(24))} /> },
   { name: "Volvamos a Chile", a: S(27), b: E(27), el: (d) => <SQuestion dur={d} a="VOLVAMOS A" b="CHILE" bg={C.blue} /> },
   {
-    name: "3 ingredientes",
+    name: "Receta (pantalla completa)",
     a: S(28),
     b: E(32),
-    el: (d) => <SIngredients dur={d} beats={[2, B(S(29), S(28)), B(S(31), S(28))]} allAt={B(S(32), S(28)) + 8} />,
+    full: true,
+    el: (d) => <SPot dur={d} beats={[2, B(S(29), S(28)), B(S(31), S(28))]} doneAt={B(S(32), S(28)) + 6} />,
   },
-  { name: "¿Por qué asusta?", a: S(33), b: E(33), el: (d) => <SQuestion dur={d} a="¿POR QUÉ" b="TANTO MIEDO?" bg={C.red} /> },
-  { name: "Dilema", a: S(34), b: E(37), el: (d) => <SDilemma dur={d} b1={B(S(35), S(34))} b2={0} b3={B(S(37), S(34))} /> },
+  { name: "¿Por qué tanto miedo?", a: S(33), b: E(33), el: (d) => <SQuestion dur={d} a="¿POR QUÉ" b="TANTO MIEDO?" bg={C.red} /> },
+  { name: "Balancín (pantalla completa)", a: S(34), b: E(37), full: true, el: (d) => <SSeesaw dur={d} b1={B(S(35), S(34))} b2={B(S(37), S(34))} /> },
   { name: "¿Estamos?", a: S(38), b: E(38), el: (d) => <SQuestion dur={d} a="¿ESTAMOS EN" b="ESTANFLACIÓN?" bg={C.yellow} color={C.ink} /> },
-  { name: "Veredicto", a: S(39), b: E(40), el: (d) => <SVerdict dur={d} b2={B(S(40), S(39))} /> },
+  { name: "Veredicto (avatares)", a: S(39), b: E(40), el: (d) => <SVerdictAvatars dur={d} b2={B(S(40), S(39))} /> },
   { name: "Riesgo", a: S(41), b: E(42), el: (d) => <SRisk dur={d} iconsAt={B(W(42, /petr/i), S(41))} /> },
   { name: "Cierre", a: S(43), b: E(43), el: (d) => <SCta dur={d} /> },
 ];
@@ -143,10 +139,10 @@ const SPANS = PIECES.reduce<{ from: number; dur: number; cut_from: number }[]>((
 const Speaker: React.FC = () => {
   const f = useCurrentFrame();
   const i = pieceAt(f);
-  const scale = i % 2 ? 1.05 : 1.0; // leve acercamiento en tomas alternadas para ocultar los cortes
+  const scale = BASE_ZOOM * (i % 2 ? 1.04 : 1.0); // leve acercamiento en tomas alternadas para ocultar los cortes
   return (
     <AbsoluteFill style={{ backgroundColor: "#111" }}>
-      <AbsoluteFill style={{ scale: String(scale), transformOrigin: "540px 1090px", translate: `0px ${SPEAKER_OFFSET}px` }}>
+      <AbsoluteFill style={{ scale: String(scale), transformOrigin: `${FACE.x}px ${FACE.y}px`, translate: `${540 - FACE.x}px ${SPEAKER_OFFSET}px` }}>
         {SPANS.map((sp) => (
           <Sequence key={sp.from} from={sp.from} durationInFrames={sp.dur} name={`Video ${sp.from}`}>
             <Video src={staticFile("recesion/cut.mp4")} trimBefore={sp.cut_from} style={{ width: 1080, height: 1920 }} />
@@ -198,6 +194,7 @@ const SFX: { at: number; file: string; vol: number }[] = [
 ];
 
 export const RecesionReel: React.FC = () => (
+  <SeriesCtx.Provider value={{ label: "ECONOMÍA SIMPLE", date: "RECESIÓN Y ESTANFLACIÓN" }}>
   <AbsoluteFill style={{ backgroundColor: "#111" }}>
     <Speaker />
     <Panel />
@@ -208,4 +205,5 @@ export const RecesionReel: React.FC = () => (
       </Sequence>
     ))}
   </AbsoluteFill>
+  </SeriesCtx.Provider>
 );

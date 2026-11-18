@@ -19,8 +19,13 @@ export const count = (f: number, a: number, b: number, to: number, from = 0) =>
   interpolate(f, [a, b], [from, to], { ...clamp, easing: Easing.bezier(0.22, 1, 0.36, 1) });
 export const fmt = (n: number, d = 0) => n.toLocaleString("es-CL", { minimumFractionDigits: d, maximumFractionDigits: d });
 
+/** Etiqueta de serie/tema de cada video (se define con <SeriesCtx.Provider> en la composición). */
+export const SeriesCtx = React.createContext<{ label: string; date: string }>(STYLE.series);
+
 /** Etiqueta de la serie, arriba a la izquierda. */
-export const SeriesTag: React.FC = () => (
+export const SeriesTag: React.FC = () => {
+  const series = React.useContext(SeriesCtx);
+  return (
   <div style={{ position: "absolute", top: 104, left: 70, display: "flex", alignItems: "center", gap: 14 }}>
     <span
       style={{
@@ -35,11 +40,12 @@ export const SeriesTag: React.FC = () => (
         border: `3px solid ${C.ink}`,
       }}
     >
-      {STYLE.series.label}
+      {series.label}
     </span>
-    <span style={{ fontFamily: F.body, fontWeight: 700, fontSize: 24, color: C.muted, letterSpacing: 1 }}>{STYLE.series.date}</span>
+    <span style={{ fontFamily: F.body, fontWeight: 700, fontSize: 24, color: C.muted, letterSpacing: 1 }}>{series.date}</span>
   </div>
-);
+  );
+};
 
 /** Tarjeta de datos: papel blanco, borde negro, sombra dura. */
 export const Card: React.FC<{
