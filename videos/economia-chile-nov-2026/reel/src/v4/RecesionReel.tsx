@@ -145,7 +145,7 @@ const Speaker: React.FC = () => {
       <AbsoluteFill style={{ scale: String(scale), transformOrigin: `${FACE.x}px ${FACE.y}px`, translate: `${540 - FACE.x}px ${SPEAKER_OFFSET}px` }}>
         {SPANS.map((sp) => (
           <Sequence key={sp.from} from={sp.from} durationInFrames={sp.dur} name={`Video ${sp.from}`}>
-            <Video src={staticFile("recesion/cut.mp4")} trimBefore={sp.cut_from} style={{ width: 1080, height: 1920 }} />
+            <Video src={staticFile("recesion/cut1260.mp4")} trimBefore={sp.cut_from} style={{ width: 1080, height: 1920 }} />
           </Sequence>
         ))}
       </AbsoluteFill>
